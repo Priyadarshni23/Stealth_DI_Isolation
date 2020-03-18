@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Stealth Management Server(s)" max_length="40" name="x_443993_server_stealth_management_server_s" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element attributes="encode_utf8=false" display="true" label="Enterprise Manager Information" max_length="32" name="u_enterprise_manager_information" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Password" mandatory="true" max_length="255" name="u_password" type="password2"/>
+        <element attributes="encode_utf8=false" label="Server Information" mandatory="true" max_length="32" name="u_server_information" reference="cmdb_ci_server" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Server Name" mandatory="true" max_length="40" name="u_server_name" type="string"/>
+        <element attributes="encode_utf8=false" label="User Name" mandatory="true" max_length="32" name="u_user_name" type="string"/>
+        <index name="index">
+            <element name="u_user_name"/>
+        </index>
+        <index name="index2">
+            <element name="u_server_information"/>
+        </index>
+        <index name="index3">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>
